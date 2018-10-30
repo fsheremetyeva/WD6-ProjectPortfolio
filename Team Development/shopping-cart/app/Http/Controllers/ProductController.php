@@ -12,4 +12,9 @@ class ProductController extends Controller
         $products = Product::all();
         return view('shop.index', ['products' => $products]);
     }
+    
+    public function getAddToCart(Request $request, $id) {
+        $product = Product::find($id);
+        
+    }
 }
