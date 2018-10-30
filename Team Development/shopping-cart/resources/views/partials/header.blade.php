@@ -15,7 +15,7 @@
 User Management</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{ route('user.signup') }}">Sign up</a>
-          <a class="dropdown-item" href="">Sign in</a>
+          <a class="dropdown-item" href="{{ route('user.signin') }}">Sign in</a>
           <a class="dropdown-item" href="#">Logout</a>
 
         </div>
