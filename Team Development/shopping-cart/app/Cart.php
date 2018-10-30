@@ -26,6 +26,13 @@ class Cart extends Model
                 $storedItem = $this->items[$id];
             }
         }
+        // increase qty and price
+        $storedItem['qty']++;
+        $storedItem['price'] = $item->price * $storedItem['qty'];
+        
+        // update data in session
         $this->items[$id] = $storedItem;
+        $this->totalQty++;
+        $this->totalPrice += $item->price;
     }
 }
