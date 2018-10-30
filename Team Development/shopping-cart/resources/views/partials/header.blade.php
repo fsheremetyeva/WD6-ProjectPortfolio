@@ -14,9 +14,16 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
 User Management</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('user.signup') }}">Sign up</a>
-          <a class="dropdown-item" href="{{ route('user.signin') }}">Sign in</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          @if(Auth::check())
+            <a class="dropdown-item" href="{{ route('user.profile') }}">User Profile</a>
+            <a class="dropdown-item" href="{{route('user.logout')}}">Logout</a>
+
+          @else
+            <a class="dropdown-item" href="{{ route('user.signup') }}">Sign up</a>
+            <a class="dropdown-item" href="{{ route('user.signin') }}">Sign in</a>
+          @endif
+
+
 
         </div>
       </li>
