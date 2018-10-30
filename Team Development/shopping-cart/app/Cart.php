@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Cart extends Model
+class Cart
 {
     public $items = null;
     public $totalQty = 0;
