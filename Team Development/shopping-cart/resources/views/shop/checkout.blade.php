@@ -5,14 +5,14 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+    <div class="d-flex justify-content-center">
+        <div class="col-sm-8 col-md-6">
             <h1>Checkout</h1>
             <h4>Your Total: ${{ $total }}</h4>
             
-            <form action="{{ route('checkout') }}" method="post">
-                <div class="row">
-                    <div class="col-xs-12">
+            <form action="{{ route('checkout') }}" method="post" id="checkout-form">
+                <div class="d-flex flex-column">
+                    <div class="col-xs-12 flex-grow-1">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" class="form-control" required>
@@ -37,8 +37,8 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="row">
-                            <div class="col-xs-6">
+                        <div class="d-flex justify-content-between">
+                            <div class="col-xs-6 mr-1">
                                 <div class="form-group">
                                     <label for="card-expiry-month">Expiration Month</label>
                                     <input type="text" id="card-expiry-month" class="form-control" required>
@@ -59,6 +59,8 @@
                         </div>
                     </div>
                 </div>
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-success">Buy now</button>
             </form>
         </div>
     </div>
