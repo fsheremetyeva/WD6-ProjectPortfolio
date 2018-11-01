@@ -1,3 +1,4 @@
+/***** General *****/
 body {
     background-color: #1d70aa;
     color: #eee;
@@ -6,13 +7,23 @@ body {
     background-color: #1b212c;
 }
 
+/***** Component Specific *****/
 .card img{
   max-height:300px;
 }
+/* make text dark to work in sections with light bgkds */
 .card-text, .card-title, .price, 
 .list-group-item {
   color:#222;
 }
 .price{
   font-weight: bold;
+}
+/* height of slider image to cover until the fold */
+.h-fold {
+    height: 700px;
+}
+.carousel-caption {
+    background-color: #000;
+    opacity: .7;
 }

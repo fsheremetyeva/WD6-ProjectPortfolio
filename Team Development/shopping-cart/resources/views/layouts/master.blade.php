@@ -12,6 +12,7 @@
 </head>
 <body>
 @include('partials.header')
+@yield('slider')
 <div class="container">
     @yield('content')
 </div>
