@@ -6,7 +6,7 @@
 
 @section('content')
     @if(Session::has('cart'))
-        <div class="row">
+        <div class="d-flex justify-content-center mt-2">
             <div class="col-sm-6 col-sm-offset-3">
                 <ul class="list-group">
                     @foreach($products as $product)
@@ -28,16 +28,14 @@
                 </ul>
             </div>
         </div>
-        <div class="row my-2">
+        <div class="d-flex justify-content-center my-2">
             <div class="col-sm-6 col-sm-offset-3">
                 <strong>Total: {{ $totalPrice }}</strong>
             </div>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <a href="{{ route('checkout') }}" type="button" class="btn btn-success">Checkout</a>
-            </div>
+        <div class="d-flex justify-content-center">
+            <a href="{{ route('checkout') }}" type="button" class="btn btn-success">Checkout</a>
         </div>
     @else
         <div class="row">

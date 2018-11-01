@@ -1,7 +1,16 @@
+body {
+    background-color: #1d70aa;
+    color: #eee;
+}
+.navbar {
+    background-color: #1b212c;
+}
+
 .card img{
   max-height:300px;
 }
-.card-text{
+.card-text, .card-title, .price, 
+.list-group-item {
   color:#222;
 }
 .price{

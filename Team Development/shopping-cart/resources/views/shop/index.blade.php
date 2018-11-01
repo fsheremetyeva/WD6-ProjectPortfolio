@@ -6,7 +6,7 @@
 
 @section('content')
     @foreach($products->chunk(3) as $productChunk)
-        <div class="row">
+        <div class="row mt-2">
             @foreach($productChunk as $product)
               <div class="col-sm-6 col-md-4">
                 <div class="card" style="width: 18rem;">
