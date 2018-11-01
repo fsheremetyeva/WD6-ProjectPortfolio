@@ -8,7 +8,13 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Shopping Cart</a>
+        <a class="nav-link" href="{{ route('product.shoppingCart') }}">
+            <i class="fas fa-shopping-cart"></i> Shopping Cart
+            <span class="badge badge-secondary">{{ Session::has('cart') 
+                                    ? Session::get('cart')->totalQty 
+                                    : '' }}
+            </span>
+        </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
