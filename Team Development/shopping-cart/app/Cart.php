@@ -9,7 +9,7 @@ class Cart
     public $totalPrice = 0;
     
     // use seesion to recreate cart (for offline use)
-    public function _construct($oldCart) 
+    public function __construct($oldCart) 
     {
         if ($oldCart) {
             $this->items = $oldCart->items;
