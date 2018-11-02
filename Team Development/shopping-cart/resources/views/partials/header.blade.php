@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="{{ route('product.index') }}">
-      <img src="{{ asset('logo/Logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="JF Web Consulting Logo">iMerch Shopping Cart</a>
+      <!-- keeping logo width/height ratio same as original image -->
+      <img src="{{ asset('logo/iMerch-green-fusia.png') }}" width="103.75" height="50" class="d-inline-block align-top" alt="JF Web Consulting Logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
