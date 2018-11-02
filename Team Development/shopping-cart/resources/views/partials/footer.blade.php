@@ -1,4 +1,4 @@
-<footer class="py-5 mt-3 d-flex justify-content-around align-items-center">
+<footer class="py-3 mt-3 px-3 d-md-flex justify-content-around align-items-center">
     <address>
         314 Interest Way<br>
         Santa Clarita, CA 97023<br>
