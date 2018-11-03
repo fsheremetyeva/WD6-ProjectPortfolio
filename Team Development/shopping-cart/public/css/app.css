@@ -1,9 +1,94 @@
+/***** General *****/
+
+/* changed button success and badge to use our logo teal color */
+.btn-success, 
+.badge-success {
+    background-color: #2b9489;
+}
+
+.btn-success:hover {
+    background-color: #2b9489;
+    opacity: .7;
+}
+
+.btn-success:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+}
+
+.btn-success:not(:disabled):not(.disabled):active {
+    background-color: #2b9489;
+    opacity: .95;
+    border-color: #2b9489;
+}
+
+/*** Sticky Footer Setup **/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+
+
+/***** Footer ******/
+footer {
+    background-color: #7d0b6b;
+    color: #fff;
+}
+
+address {
+    font-style: italic;
+}
+
+.fab {
+    font-size: 36px;
+    margin: 0 5px;
+}
+
+a {
+    color: #2b9489;
+}
+
+
+
+/*** Navigation ***/
+/* navbar bottom border */
+.navbar {
+    border-bottom: #2b9489;
+    border-width: 2px;
+    border-bottom-style: solid;
+}
+
+/* hover on nav links */
+.nav-link:focus, 
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #7d0b6b;
+}
+
+
+
+/***** Component Specific *****/
 .card img{
   max-height:300px;
 }
-.card-text{
+/* make text dark to work in sections with light bgkds */
+.card-text, .card-title, .price, 
+.list-group-item {
   color:#222;
 }
 .price{
   font-weight: bold;
+}
+/* height of slider image to cover until the fold */
+.h-fold {
+    height: 700px;
+}
+.carousel-caption {
+    background-color: #000;
+    opacity: .7;
 }
