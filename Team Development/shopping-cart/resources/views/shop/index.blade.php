@@ -33,6 +33,15 @@
 
 
 @section('content')
+  @if(Session::has('success'))
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="charge-message" class="alert alert-message">
+          {{ Session::get('success') }}
+        </div>
+      </div>
+    </div>
+  @endif
     <h2 class="mt-5">Popular Books</h2>
     @foreach($products->chunk(4) as $productChunk)
         <div class="row d-md-flex mx-auto mt-2">

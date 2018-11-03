@@ -52,5 +52,28 @@ class ProductController extends Controller
         $total = $cart->totalPrice;
         return view('shop.checkout', ['total' => $total]);
     }
+    public function postCheckout(Request $request){
+      if (!Session::has('cart')) {
+          return redirect()->route('shop.shoppingCart');
+      }
+      $oldCart = Session::get('cart');
+      $cart = new Cart($oldCart);
+
+      Stripe::setApiKey('sk_test_CQnMLMgwlhtJoVmXl0EJPyIy');
+      try{
+        Charge::create([
+          "amount" => $cart->totalPrice * 100,
+          "currency" => "usd",
+          "source" => $request->input('stripeToken'),
+          "description" => "Test Charge"
+        ]);
+      }catch(\Exception $e){
+        return redirect()->route('checkout')->with('error', $e->getMessage());
+      }
+
+      Session::forget('cart');
+      return redirect()->route('product.index')->with('success', 'Successfully purchased products!');
+
+    }
 
 }
