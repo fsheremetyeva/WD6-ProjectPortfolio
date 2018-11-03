@@ -5,29 +5,33 @@
 @endsection
 
 @section('slider')
+
 <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+
   <div class="carousel-inner">
-    @for ($i = 0; $i < 3; $i++)
-        @if ($i == 0)
-            <div class="carousel-item active">
-        @else
-            <div class="carousel-item">
-        @endif
-          <img class="d-block w-100 h-fold" src="{{ $products[$i]->imagePath }}" alt="{{ $products[$i]->title }}">
-          <div class="carousel-caption d-none d-md-block">
-              <h5>{{ $products[$i]->title }}</h5>
-              <p>{{ $products[$i]->description }}</p>
-        </div>
-      </div>
-    @endfor
-  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+      <div class="container">
+        @for ($i = 0; $i < 3; $i++)
+            @if ($i == 0)
+                <div class="carousel-item active">
+            @else
+                <div class="carousel-item">
+            @endif
+              <img class="d-block w-100 h-fold" src="{{ $products[$i]->imagePath }}" alt="{{ $products[$i]->title }}">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>{{ $products[$i]->title }}</h5>
+                  <p>{{ $products[$i]->description }}</p>
+            </div>
+          </div>
+        @endfor
+      <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+  </div>
 </div>
 @endsection
 
@@ -36,7 +40,7 @@
   @if(Session::has('success'))
     <div class="row">
       <div class="col-sm-6">
-        <div id="charge-message" class="alert alert-message">
+        <div id="charge-message" class="alert alert-success">
           {{ Session::get('success') }}
         </div>
       </div>

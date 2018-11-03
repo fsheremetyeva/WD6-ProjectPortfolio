@@ -7,13 +7,13 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('product.shoppingCart') }}">
             <i class="fas fa-shopping-cart"></i> Shopping Cart
-            <span class="badge badge-secondary">{{ Session::has('cart') 
-                                    ? Session::get('cart')->totalQty 
+            <span class="badge badge-secondary">{{ Session::has('cart')
+                                    ? Session::get('cart')->totalQty
                                     : '' }}
             </span>
         </a>
