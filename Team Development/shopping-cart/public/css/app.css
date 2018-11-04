@@ -53,7 +53,16 @@ a {
 .navbar-light .navbar-nav .nav-link:hover {
     color: #7d0b6b;
 }
+.nav-link,
+.navbar-light .navbar-nav .nav-link {
+    color: #222;
+    font-weight:bold;
+    font-size:18px;
+}
 
+.navbar-expand-lg .navbar-collapse{
+  flex-direction: row-reverse;
+}
 
 /***** Component Specific *****/
 .card img{
@@ -76,7 +85,9 @@ a {
     background-color: #000;
     opacity: .7;
 }
-
+.carousel-inner{
+  background:#333;
+}
 /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
  * how you can use CSS to style your Element's container.
