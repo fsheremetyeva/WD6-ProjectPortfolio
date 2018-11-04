@@ -3,21 +3,25 @@
 @section('content')
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h1>user Profile</h1>
+      <h1>User Profile</h1>
       <hr>    
-        
-      <div class="card text-center">
-        <div class="card-body">
-          <h5 class="card-title">My Orders</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional  content.</p>
+      <h2>My Orders</h2>
+      
+      @foreach($orders as $order)
+        <div class="card text-center">
+          <ul class="list-group list-group-flush">
+            @foreach($order->cart->items as $item)
+              <li class="list-group-item">
+                {{ $item['item']['title'] }} | {{ $item['qty'] }} Units
+                <span class="badge">$ {{ $item['price'] }}</span>
+              </li>
+            @endforeach
+          </ul>
+          <div class="card-footer text-muted">
+            <strong>Total Price: ${{ $order->cart->totalPrice }}</strong>  
+          </div>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-        </ul>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 @endsection
