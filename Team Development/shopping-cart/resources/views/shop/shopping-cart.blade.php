@@ -7,7 +7,7 @@
 @section('content')
     @if(Session::has('cart'))
         <div class="d-flex justify-content-center mt-2">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-8 col-sm-offset-3">
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item d-flex align-items-center">
@@ -18,8 +18,8 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownBtn">
-                                    <li class="dropdown-item"><a href="#">Reduce by 1</a></li>
-                                    <li class="dropdown-item"><a href="#">Reduce All</a></li>
+                                    <li class="dropdown-item"><a href="{{ route('product.reduceByOne', ['id'=>$product['item']['id']]) }}">Reduce by 1</a></li>
+                                    <li class="dropdown-item"><a href="{{ route('product.remove', ['id'=>$product['item']['id']]) }}">Reduce All</a></li>
                                 </ul>
                             </div>
                             <span class="badge badge-secondary ml-auto">{{ $product['qty'] }}</span>

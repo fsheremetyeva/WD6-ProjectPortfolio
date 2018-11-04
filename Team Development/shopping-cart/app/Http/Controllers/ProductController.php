@@ -31,6 +31,36 @@ class ProductController extends Controller
 //        dd($request->session()->get('cart'));
         return redirect()->route('product.index');
     }
+    
+    public function getReduceByOne($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        
+        // check that there is at least one item in the shopping cart
+        if (count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+        
+        return redirect()->route('product.shoppingCart');
+    }
+    
+    public function getRemoveItem($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        
+        // check that there is at least one item in the shopping cart
+        if (count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+        
+        return redirect()->route('product.shoppingCart');
+    }
 
     public function getCart() {
         // if no items, don't return anything
