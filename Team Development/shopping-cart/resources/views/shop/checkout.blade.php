@@ -9,8 +9,8 @@
         <div class="col-sm-8 col-md-6">
             <h1>Checkout</h1>
             <h4>Your Total: ${{ $total }}</h4>
-            
-            <form action="{{ route('checkout') }}" method="post" id="checkout-form">
+
+         <form action="{{ route('checkout') }}" method="post" id="payment-form">
                 <div class="d-flex flex-column">
                     <div class="col-xs-12 flex-grow-1">
                         <div class="form-group">
@@ -30,7 +30,18 @@
                             <input type="text" id="card-name" class="form-control" required>
                         </div>
                     </div>
-                    <div class="col-xs-12">
+                    <div class="form-row">
+                      <label for="card-element">
+                        Credit or debit card
+                      </label>
+                      <div id="card-element" style="width:100%;" class="form-control">
+                        <!-- A Stripe Element will be inserted here. -->
+                      </div>
+
+                      <!-- Used to display form errors. -->
+                      <div id="card-errors" role="alert"></div>
+                    </div>
+            <!--      <div class="col-xs-12">
                         <div class="form-group">
                             <label for="card-number">Credit Card Number</label>
                             <input type="text" id="card-number" class="form-control" required>
@@ -57,11 +68,16 @@
                             <label for="card-cvc">CVC</label>
                             <input type="text" id="card-cvc" class="form-control" required>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 {{ csrf_field() }}
                 <button type="submit" class="btn btn-success">Buy now</button>
             </form>
+
         </div>
     </div>
+@endsection
+@section('scripts')
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="{{ URL::to('js/checkout.js') }}"></script>
 @endsection

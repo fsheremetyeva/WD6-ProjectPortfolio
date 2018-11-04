@@ -1,61 +1,46 @@
 /***** General *****/
-
 /* changed button success and badge to use our logo teal color */
-.btn-success, 
+.btn-success,
 .badge-success {
     background-color: #2b9489;
 }
-
 .btn-success:hover {
     background-color: #2b9489;
     opacity: .7;
 }
-
 .btn-success:focus,
 .btn-success:not(:disabled):not(.disabled):active:focus {
     box-shadow: none;
 }
-
 .btn-success:not(:disabled):not(.disabled):active {
     background-color: #2b9489;
     opacity: .95;
     border-color: #2b9489;
 }
-
 /*** Sticky Footer Setup **/
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 .container {
     flex: 1;
 }
-
-
-
 /***** Footer ******/
 footer {
     background-color: #7d0b6b;
     color: #fff;
 }
-
 address {
     font-style: italic;
 }
-
 .fab {
     font-size: 36px;
     margin: 0 5px;
 }
-
 a {
     color: #2b9489;
 }
-
-
-
 /*** Navigation ***/
 /* navbar bottom border */
 .navbar {
@@ -63,13 +48,11 @@ a {
     border-width: 2px;
     border-bottom-style: solid;
 }
-
 /* hover on nav links */
-.nav-link:focus, 
+.nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
     color: #7d0b6b;
 }
-
 
 
 /***** Component Specific *****/
@@ -77,13 +60,14 @@ a {
   max-height:300px;
 }
 /* make text dark to work in sections with light bgkds */
-.card-text, .card-title, .price, 
+.card-text, .card-title, .price,
 .list-group-item {
   color:#222;
 }
 .price{
   font-weight: bold;
 }
+
 /* height of slider image to cover until the fold */
 .h-fold {
     height: 700px;
@@ -91,4 +75,31 @@ a {
 .carousel-caption {
     background-color: #000;
     opacity: .7;
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
 }
