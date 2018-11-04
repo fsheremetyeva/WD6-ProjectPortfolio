@@ -19,7 +19,7 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownBtn">
                                     <li class="dropdown-item"><a href="{{ route('product.reduceByOne', ['id'=>$product['item']['id']]) }}">Reduce by 1</a></li>
-                                    <li class="dropdown-item"><a href="#">Reduce All</a></li>
+                                    <li class="dropdown-item"><a href="{{ route('product.remove', ['id'=>$product['item']['id']]) }}">Reduce All</a></li>
                                 </ul>
                             </div>
                             <span class="badge badge-secondary ml-auto">{{ $product['qty'] }}</span>
