@@ -6,6 +6,7 @@
 
 @section('content')
     @if(Session::has('cart'))
+      <br><h1 class="text-center">Shopping Cart</h1><br>
         <div class="d-flex justify-content-center mt-2">
             <div class="col-sm-8 col-sm-offset-3">
                 <ul class="list-group">
@@ -41,12 +42,12 @@
     @else
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-                <h2>No Items in Cart</h2>
+                <br><h2>No Items in Cart</h2><br>
             </div>
         </div>
     @endif
     @if(Session::has('wish-list'))
-      <h1>MY WISH LIST</h1>
+      <br><h2 class="text-center wish-list-header fusia">My Wish List</h2><br>
         <div class="d-flex justify-content-center mt-2">
             <div class="col-sm-8 col-sm-offset-3">
                 <ul class="list-group">

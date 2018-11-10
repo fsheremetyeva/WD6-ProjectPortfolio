@@ -1,5 +1,14 @@
 /***** General *****/
 /* changed button success and badge to use our logo teal color */
+html [type=button] {
+    -webkit-appearance: none;
+}
+.wish-list-header{
+  padding-top:50px;
+}
+.fusia{
+  color:#7d0b6b;
+}
 .btn-success,
 .badge-success {
     background-color: #2b9489;
