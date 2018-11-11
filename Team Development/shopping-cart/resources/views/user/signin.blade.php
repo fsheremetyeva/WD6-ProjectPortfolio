@@ -23,6 +23,7 @@
         <button type="submit" class="btn btn-primary">Sign In</button>
         {{ csrf_field() }}
       </form>
+        <p><strong><a href="{{ route('redirect') }}">Sign in with Google</a></strong></p>
         <p>Don't have an account? <a href="{{ route('user.signup') }}">Sign up instead!</a></p>
     </div>
 
