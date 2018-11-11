@@ -114,3 +114,10 @@ Route::group(['prefix' => 'user'], function(){
         ]);
   });
 });
+
+// oAuth Routes
+Route::get('/redirect', [
+    'uses' => 'Auth\LoginController@redirectToProvider',
+    'as' => 'redirect',
+]);
+Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
